@@ -1,0 +1,19 @@
+name: Unzip and Commit
+on:
+  push:
+    paths:
+      - '*.zip'  # 触发条件：上传 zip 文件
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unzip
+        run: unzip archive.zip -d extracted
+      - name: Commit changes
+        run: |
+          git config --global user.name "你的名字"
+          git config --global user.email "你的邮箱"
+          git add extracted/
+          git commit -m "auto unzip archive"
+          git push
