@@ -1,19 +1,26 @@
-name: Unzip and Commit
+name: Unzip and Commit tar.gz files
 on:
   push:
     paths:
-      - '*.zip'  # 触发条件：上传 zip 文件
+      - '*.tar.gz'  # 触发条件：上传 tar.gz 文件
 jobs:
   unzip:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Unzip
-        run: unzip archive.zip -d extracted
-      - name: Commit changes
+        with:
+          fetch-depth: 0
+      - name: Create extract directory
+        run: mkdir -p extracted
+      - name: Extract all tar.gz files
         run: |
-          git config --global user.name "你的名字"
-          git config --global user.email "你的邮箱"
+          tar -zxvf markdown_files.tar.gz -C extracted
+          tar -zxvf python_files.tar.gz -C extracted
+          tar -zxvf txt_csv_files.tar.gz -C extracted
+      - name: Commit extracted files
+        run: |
+          git config --global user.name "ruiyanz527-rgb"
+          git config --global user.email "你的GitHub邮箱"
           git add extracted/
-          git commit -m "auto unzip archive"
+          git commit -m "Auto extract all tar.gz files"
           git push
