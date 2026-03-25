@@ -1,0 +1,61 @@
+# 数据处理和分析
+pandas>=1.3.0
+numpy>=1.21.0
+scipy>=1.7.0
+
+# 数据预处理和特征工程
+scikit-learn>=0.24.0
+category_encoders>=2.3.0
+
+# 数据可视化
+matplotlib>=3.4.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# 模型训练
+xgboost>=1.5.0
+lightgbm>=3.3.0
+catboost>=1.0.0
+
+# 深度学习 (LLM相关)
+torch>=1.9.0
+transformers>=4.10.0
+pytorch-lightning>=1.4.0
+datasets>=2.0.0
+peft>=0.5.0
+wandb>=0.15.0
+rouge-score>=0.1.2
+
+# 文本处理和NLP
+nltk>=3.6.0
+jieba>=0.42.0
+gensim>=4.0.0
+
+# 数据合成和生成
+faker>=8.0.0
+sdv>=0.13.0  # Synthetic Data Vault
+
+# Jupyter和开发工具
+jupyter>=1.0.0
+jupyterlab>=3.0.0
+ipython>=7.0.0
+
+# 其他工具
+tqdm>=4.60.0
+pyyaml>=5.4.0
+python-dotenv>=0.19.0
+
+# 数据质量检查
+pandas-profiling>=3.0.0
+great-expectations>=0.12.0
+
+# API和网络
+requests>=2.26.0
+aiohttp>=3.8.0
+
+# 日志和监控
+loguru>=0.5.0
+
+# 单元测试
+pytest>=6.2.0
+pytest-cov>=2.12.0
