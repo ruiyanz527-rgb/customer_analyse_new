@@ -14,9 +14,10 @@ jobs:
         run: mkdir -p extracted
       - name: Extract all tar.gz files
         run: |
-          tar -zxvf markdown_files.tar.gz -C extracted
-          tar -zxvf python_files.tar.gz -C extracted
-          tar -zxvf txt_csv_files.tar.gz -C extracted
+          # tar -zxvf markdown_files.tar.gz -C extracted
+          # tar -zxvf python_files.tar.gz -C extracted
+          # tar -zxvf txt_csv_files.tar.gz -C extracted
+          tar -zxvf json_files.tar.gz -C extracted
       - name: Commit extracted files
         run: |
           git config --global user.name "ruiyanz527-rgb"
